@@ -1,11 +1,18 @@
-import React from 'react'
+import { Editor } from '@/components/editor/Editor'
+import Header from '@/components/Header'
+import {
+    SignInButton,
+    SignedIn,
+    SignedOut,
+    UserButton
+  } from '@clerk/nextjs'
 
 const page = () => {
-  return (
-    <div>
-      <h1>This is documents Id Page</h1>
-    </div>
-  )
+    return (
+        <div>
+            
+        </div>
+    )
 }
 
 export default page
