@@ -10,7 +10,7 @@ import {
 const page = () => {
     return (
         <div>
-            
+            <h1>Hey This is Id page</h1>
         </div>
     )
 }
