@@ -1,8 +1,14 @@
+import AddDocument from "@/components/AddDocument";
 import Header from "@/components/Header";
 import { SignedIn, UserButton } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+const Home = async () => {
+  const clerkUser = await currentUser()
+  if(!clerkUser) redirect("/sign-in")
+
   const documents = []
   return (
     <main>
@@ -29,9 +35,13 @@ export default function Home() {
               height={32}
               className="mx-auto"
             />
+            <AddDocument userId={clerkUser.id} email={clerkUser.emailAddresses[0].emailAddress}             />
           </div>
         )
       }
     </main>
   );
 }
+
+
+export default Home

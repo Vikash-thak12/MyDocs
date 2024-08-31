@@ -107,7 +107,7 @@
   }
 
   .document-list-empty {
-    @apply flex w-full max-w-[730px] flex-col items-center justify-center gap-5 rounded-lg bg-gray-500 px-10 py-8 mx-auto;
+    @apply flex w-full max-w-[730px] flex-col items-center justify-center gap-5 rounded-lg bg-dark-400 px-10 py-8 mx-auto;
   }
 
   .document-title-input {
