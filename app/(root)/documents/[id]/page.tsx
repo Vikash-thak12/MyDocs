@@ -1,3 +1,4 @@
+import CollaborativeRoom from '@/components/CollaborativeRoom'
 import { Editor } from '@/components/editor/Editor'
 import Header from '@/components/Header'
 import {
@@ -10,7 +11,8 @@ import {
 const page = () => {
     return (
         <div>
-            <h1>Hey This is Id page</h1>
+            {/* <h1>Hey This is Id page</h1> */}
+            <CollaborativeRoom />
         </div>
     )
 }
