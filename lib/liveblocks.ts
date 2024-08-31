@@ -1,5 +1,5 @@
 import { Liveblocks } from "@liveblocks/node";
 
 export const liveblocks = new Liveblocks({
-    secret: "",
+    secret: process.env.LIVEBLOCKS_SECRET_KEY as string,
   });
