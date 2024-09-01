@@ -4,6 +4,8 @@ import React from 'react'
 
 const ActiveCollaborators = () => {
     const others = useOthers();
+    console.log("The others are: ", others);
+    
     const collaborators = others.map((other) => other.info)
   return (
     <ul className='collaborators-list'>
