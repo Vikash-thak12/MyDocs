@@ -4,24 +4,25 @@ import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
 export async function POST(request: Request) {
-    const ClerkUser = await currentUser();  // this is the user i'm getting from the clerk
-    // console.log("The clerk user is: ", ClerkUser);
+  const clerkUser = await currentUser();
 
-    if(!ClerkUser) redirect('/sign-in')
-    const {id, firstName, lastName, imageUrl, emailAddresses} = ClerkUser;
+  if(!clerkUser) redirect('/sign-in');
 
-    const user = {               // storing the clerk user details in this user variable 
-        id,
-        info: {
-            id,
-            name: `${firstName} ${lastName}`,
-            email: emailAddresses[0].emailAddress,
-            avatar: imageUrl,
-            color: getUserColor(id)
-        }
+  const { id, firstName, lastName, emailAddresses, imageUrl } = clerkUser;
+
+  // Get the current user from your database
+  const user = {
+    id,
+    info: {
+      id,
+      name: `${firstName} ${lastName}`,
+      email: emailAddresses[0].emailAddress,
+      avatar: imageUrl,
+      color: getUserColor(id),
     }
+  }
 
-//   Identify the user and return the result
+  // Identify the user and return the result
   const { status, body } = await liveblocks.identifyUser(
     {
       userId: user.info.email,

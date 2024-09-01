@@ -1,9 +1,9 @@
-import "./globals.css"
 import { Inter as FontSans } from "next/font/google"
 
 import { cn } from "@/lib/utils"
+import './globals.css'
 import { Metadata } from "next"
-import { ClerkProvider } from '@clerk/nextjs'
+import { ClerkProvider } from "@clerk/nextjs"
 import { dark } from "@clerk/themes"
 import Provider from "./Provider"
 
@@ -13,8 +13,8 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: "My Docs",
-  description: "The app where you can do all the necessary docs implemention"
+  title: 'LiveDocs',
+  description: 'Your go-to collaborative editor',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -22,11 +22,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <ClerkProvider
       appearance={{
         baseTheme: dark,
-        variables: { colorPrimary: "#3371FF", fontSize: "16px" }
+        variables: { 
+          colorPrimary: "#3371FF" ,
+          fontSize: '16px'
+        },
       }}
     >
       <html lang="en" suppressHydrationWarning>
-        <head />
         <body
           className={cn(
             "min-h-screen font-sans antialiased",

@@ -1,7 +1,11 @@
 import { SignIn } from '@clerk/nextjs'
 
-export default function Page() {
-  return <main className='auth-page'>
-    <SignIn />
-  </main>
+const SignInPage = () => {
+  return (
+    <main className="auth-page">
+      <SignIn />
+    </main>
+  )
 }
+
+export default SignInPage
